@@ -1,0 +1,34 @@
+JMS: Java messaging service
+
+RabbitMQ Broker: intermediates the communication between different apps
+
+Different types of exchanges:
+1. direct exchange: Selects which messages will go to which consumers;
+
+2. fanout exchange: Sends the messages to all the consumers connected to it;
+
+3. topic exchange: 
+The key inside this exchange has words separated by a dot "." Key = "tv.mobile.ac"
+Key = "*.mobile.*" The * means one word before and after
+key = "*.tv.*"
+key = "#.ac" The # means one or more words before
+
+4. headers exchange: 
+header = {
+	"item1 = mobile",
+	"item2 = television"
+};
+
+Default Exchange: it is a Direct exchange which doesn't have any name (empty string)
+
+
+rabbitmq-plugins.bat enable rabbitmq_management
+
+# Deletes all the messages inside Queue-1 with ready state
+rabbitmqctl.bat purge queue Queue-1
+
+
+
+# Dependências para o cloud foundry no spring boot
+spring cloud spring service connector
+spring cloud cloudfoundry connector
